@@ -29,3 +29,37 @@ Input: nums = [1,1,1,3,3,4,3,2,4,2]
 
 Output: true
 */
+
+#include<iostream>
+using namespace std;
+
+bool repeat(int arr[], int n){
+    int start, check;
+    start = 0;
+    while(start != n-1){
+        check = start + 1;
+        for(int i = check; i<n; i++){
+            if(arr[start] == arr[i]) return true;
+        }
+        start++;
+        check++;
+    }
+    return false;
+}
+
+int main (){
+    int n;
+    cout<<"Enter number of elements: "<<endl;
+    cin>>n;
+
+    cout<<"Enter num:"<<endl;
+    int arr[n];
+    
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+
+    cout<<"Result: "<<repeat(arr, n);
+
+    return 0;
+}
